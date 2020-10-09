@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Welcome to Tarek's Project Euler clone.
         </a>
       </header>
     </div>
