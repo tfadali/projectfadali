@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import { BrowserRouter as Router, Link, NavLink, Route, Switch } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Welcome to Tarek's Project Euler clone.
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div className="App">
+        <h2>Project Fadali</h2>
+        <header className="App-header">
+            <nav className="nav-bar">
+              <NavLink activeClassName="activeLink" to="/about">about</NavLink>
+              <NavLink activeClassName="activeLink" to="/problems">problems</NavLink>
+            </nav>
+        </header>
+        <Switch>
+          <Route path="/about">
+            <h2>About Project Fadali</h2>
+            <p>
+              This is a little programming project I am working on, inspired by Project Euler.
+              It seemed like a good fit for my current goals since it will allow me to
+              show some of my full stack skill set while being simple enough to implement
+              fairly quickly.
+            </p>
+            <p>
+              I will be adding some interesting math problems in increasing difficulty.
+              It remains to be seen whether I will get a domain name and release it to
+              the public, but so far I only plan to come up with a few example problems.
+            </p>
+          </Route>
+        </Switch>
+        
+      </div>
+    </Router>
+  )
 }
 
 export default App;
