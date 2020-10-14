@@ -1,0 +1,27 @@
+.problem-header {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 10% 55% 35%;
+    border: 1px solid black;
+}
+
+.problems {
+    padding: 1rem;
+    width: 35rem;
+    margin: 0px;
+}
+
+.problem {
+    border: 1px solid black;
+    margin: 0rem;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 10% 55% 35%;
+}
+
+.cell {
+    padding: 0.5rem;
+    border: 1px solid black;
+    grid-row-start: 0;
+    grid-row-end: 1;
+}
