@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 import App from './App';
 import { AboutPage } from './pages/About';
 import { RegistrationPage } from './pages/Register';
+import { LoginPage } from './pages/Login';
 
 test('renders title', () => {
   const { getByText } = render(<App />);
@@ -30,4 +31,18 @@ test('renders registration page', () => {
 
   const confirmPasswordInput = getByLabelText(/Confirm Password/)
   expect(confirmPasswordInput).toBeInTheDocument()
+})
+
+test('renders login page', () => {
+  const { getAllByText, getByLabelText } = render(<LoginPage/>)
+
+  const [titleElement, loginButton] = getAllByText(/Sign In/i)
+  expect(titleElement).toBeInTheDocument()
+  expect(loginButton).toBeInTheDocument()
+
+  const usernameInput = getByLabelText(/Username/)
+  expect(usernameInput).toBeInTheDocument()
+
+  const passwordInput = getByLabelText(/Password/)
+  expect(passwordInput).toBeInTheDocument()
 })
