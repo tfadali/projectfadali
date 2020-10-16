@@ -1,14 +1,14 @@
+.problems {
+    padding: 1rem;
+    width: 35rem;
+    margin: 0px;
+}
+
 .problem-header {
     display: grid;
     grid-template-rows: 100%;
     grid-template-columns: 10% 55% 35%;
     border: 1px solid black;
-}
-
-.problems {
-    padding: 1rem;
-    width: 35rem;
-    margin: 0px;
 }
 
 .problem {
