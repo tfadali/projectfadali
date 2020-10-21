@@ -4,6 +4,9 @@ import App from './App';
 import { AboutPage } from './pages/About';
 import { RegistrationPage } from './pages/Register';
 import { LoginPage } from './pages/Login';
+import { MockedProvider } from '@apollo/client/testing'
+import { GET_PROBLEMS, ProblemsPage } from './pages/Problems';
+import { problems } from './models/problems'
 
 test('renders title', () => {
   const { getByText } = render(<App />);
@@ -45,4 +48,23 @@ test('renders login page', () => {
 
   const passwordInput = getByLabelText(/Password/)
   expect(passwordInput).toBeInTheDocument()
+})
+
+test('show problem list', () => {
+  const mocks = [
+    {
+      request: {
+        query: GET_PROBLEMS
+      },
+      result: {
+        data: {
+          problems
+        }
+      }
+    }
+  ]
+  // const { container } = render(
+  //   <MockedProvider mocks={mocks}>
+  //     <ProblemsPage />
+  //   </MockedProvider>)
 })
